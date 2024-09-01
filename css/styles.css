@@ -137,43 +137,13 @@ body, html {
     text-align: center;
 }
 
-/* Name Text */
-.name-text {
-    font-size: 5vw; /* Responsive font size */
-    text-align: center;
-    color: white;
-    overflow: hidden; /* Ensure text does not overflow */
-    white-space: nowrap; /* Keeps text in a single line */
-    margin: 0 auto; /* Center the text */
-}
-
-/* Media Queries for Smaller Screens */
-@media (max-width: 767px) {
-    .name-text {
-        font-size: 7vw; /* Adjust for smaller screens */
-    }
-}
-
-/* Typing Text Animation */
-.typing-text {
+.front-header h1 {
     font-size: 3.5em; /* Slightly larger for better visibility */
     margin: 0;
-    overflow: hidden; /* Ensures text does not overflow */
-    white-space: nowrap; /* Keeps text in a single line */
-    border-right: .15em solid orange; /* Creates cursor effect */
-    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
 }
 
-/* Typing Animation */
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-/* Cursor Blinking Effect */
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: orange; }
+.front-header p {
+    font-size: 1.5em; /* Increased font size */
 }
 
 /* Button Styles */
@@ -216,7 +186,7 @@ body, html {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    width: 150px; /* Adjust as needed */
+    width: 100px; /* Reduced size */
     height: auto; /* Adjust to fit content */
     display: flex;
     flex-direction: column;
@@ -236,8 +206,8 @@ body, html {
 
 /* Astronaut Image */
 .astronaut {
-    width: 120px; /* Adjust as needed */
-    height: 120px; /* Adjust as needed */
+    width: 100px; /* Reduced size */
+    height: 100px; /* Reduced size */
     background-image: url('../images/astronaut.png'); /* Ensure this path is correct */
     background-size: cover;
     background-position: center;
@@ -245,23 +215,27 @@ body, html {
     border: 2px solid white; /* Add a border to make it visible */
     border-radius: 50%; /* Optional: round the corners */
     opacity: 0.9; /* Make sure it's not too transparent */
-    animation: astronaut-animation 1s ease-in-out infinite; /* Smooth floating effect */
+    animation: rotate 20s linear infinite; /* Add rotation animation */
 }
 
-/* Astronaut Floating Animation */
-@keyframes astronaut-animation {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-/* Typing Text Animation */
+/* Astronaut Hover Effect */
+.astronaut:hover {
+    animation: none; /* Stop rotation on hover */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Add a glowing effect */
+}
+
+/* Astronaut Text */
 .astronaut-text {
-    margin-top: 10px;
-    font-size: 1.2em; /* Slightly larger text */
-    text-align: center;
     color: white;
-    overflow: hidden; /* Ensure text does not overflow */
-    white-space: nowrap; /* Keeps text in a single line */
-    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
+    font-size: 14px; /* Adjust font size as needed */
+    text-align: center;
+    white-space: pre-wrap; /* Ensure text wraps */
+    word-wrap: break-word;
+    max-width: 130px; /* Adjusted width to match astronaut size */
+    line-height: 1.2; /* Adjust line height as needed */
 }
