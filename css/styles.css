@@ -1,0 +1,229 @@
+/* Basic Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Social Icons Header */
+.social-header {
+    background-color: transparent; /* Transparent background */
+    padding: 10px 0; /* Add padding */
+    position: fixed; /* Fixed at the bottom */
+    left: 50%; /* Center horizontally */
+    bottom: 20px; /* Position from the bottom */
+    transform: translateX(-50%); /* Center horizontally */
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.social-header .container {
+    display: flex;
+    flex-direction: row; /* Align icons horizontally */
+    justify-content: center; /* Center icons horizontally */
+    align-items: center; /* Align icons vertically */
+}
+
+/* Adjust spacing and alignment of social icons */
+.social-header .btn-outline-light {
+    color: white; /* White text color */
+    border-color: white; /* White border color */
+    margin: 0 10px; /* Space between icons */
+    background-color: transparent; /* Transparent background */
+}
+
+.social-header .btn-outline-light i {
+    font-size: 24px; /* Size of icons */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6); /* Glowing effect */
+}
+
+/* Hover effect for icons */
+.social-header .btn-outline-light:hover i {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 1), 0 0 15px rgba(255, 255, 255, 0.8); /* Brighter glow on hover */
+}
+
+/* Starry Background */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+    z-index: 1; /* Ensure stars are behind the content */
+}
+
+/* Regular Stars */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    width: 8px; /* Increased size for better visibility */
+    height: 8px; /* Increased size for better visibility */
+    opacity: 0.8;
+    animation: twinkle 4s infinite ease-in-out; /* Slowed down twinkle effect */
+    transition: transform 0.5s ease-in-out; /* Subtle hover effect */
+}
+
+/* Star Hover Effect */
+.star:hover {
+    transform: scale(1.5);
+}
+
+/* Keyframes for star twinkle effect */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Keyframes for shooting star effect */
+@keyframes shoot {
+    0% {
+        opacity: 1;
+        transform: translateY(-100vh) translateX(-100vw) rotate(45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) translateX(100vw) rotate(45deg);
+    }
+}
+
+/* Shooting Stars */
+.shooting-star {
+    position: absolute;
+    background: linear-gradient(45deg, white, rgba(255, 255, 255, 0));
+    width: 10px; /* Increased size for better visibility */
+    height: 10px; /* Increased size for better visibility */
+    opacity: 1;
+    transform: rotate(45deg);
+    animation: shoot 6s linear infinite; /* Slowed down shooting star effect */
+}
+
+/* Random positions and animations */
+.stars .star:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.stars .star:nth-child(2) { top: 20%; left: 30%; animation-delay: 1s; }
+.stars .star:nth-child(3) { top: 30%; left: 45%; animation-delay: 2s; }
+.stars .star:nth-child(4) { top: 40%; left: 60%; animation-delay: 3s; }
+.stars .star:nth-child(5) { top: 50%; left: 75%; animation-delay: 4s; }
+
+/* More shooting stars for visual effect */
+.stars .shooting-star:nth-child(6) { top: 10%; left: 5%; animation-duration: 6s; animation-delay: 0s; }
+.stars .shooting-star:nth-child(7) { top: 20%; left: 20%; animation-duration: 7s; animation-delay: 1s; }
+.stars .shooting-star:nth-child(8) { top: 30%; left: 35%; animation-duration: 8s; animation-delay: 2s; }
+.stars .shooting-star:nth-child(9) { top: 40%; left: 50%; animation-duration: 6s; animation-delay: 3s; }
+.stars .shooting-star:nth-child(10) { top: 50%; left: 65%; animation-duration: 7s; animation-delay: 4s; }
+.stars .shooting-star:nth-child(11) { top: 60%; left: 80%; animation-duration: 8s; animation-delay: 5s; }
+.stars .shooting-star:nth-child(12) { top: 70%; left: 10%; animation-duration: 7s; animation-delay: 6s; }
+.stars .shooting-star:nth-child(13) { top: 80%; left: 25%; animation-duration: 8s; animation-delay: 7s; }
+.stars .shooting-star:nth-child(14) { top: 90%; left: 40%; animation-duration: 6s; animation-delay: 8s; }
+.stars .shooting-star:nth-child(15) { top: 20%; left: 80%; animation-duration: 7s; animation-delay: 9s; }
+
+/* Front Page Content */
+.front-page {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+}
+
+.front-header h1 {
+    font-size: 3.5em; /* Slightly larger for better visibility */
+    margin: 0;
+}
+
+.front-header p {
+    font-size: 1.5em; /* Increased font size */
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 12px 24px; /* Larger padding */
+    margin-top: 20px;
+    font-size: 1.2em; /* Increased font size */
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+}
+
+/* Button Hover Effect */
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Slight grow effect on hover */
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+/* Download Resume Button */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+/* Button Hover Effect */
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+/* Astronaut Container */
+.astronaut-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 150px; /* Adjust as needed */
+    height: auto; /* Adjust to fit content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 767px) {
+    .astronaut-container {
+        top: 10px; /* Move to top */
+        right: 10px; /* Keep on the right */
+        bottom: auto; /* Disable bottom positioning */
+    }
+}
+
+/* Astronaut Image */
+.astronaut {
+    width: 120px; /* Adjust as needed */
+    height: 120px; /* Adjust as needed */
+    background-image: url('../images/astronaut.png'); /* Ensure this path is correct */
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    border: 2px solid white; /* Add a border to make it visible */
+    border-radius: 50%; /* Optional: round the corners */
+    opacity: 0.9; /* Make sure it's not too transparent */
+}
+
+/* Astronaut Text */
+.astronaut-text {
+    color: white;
+    font-size: 16px; /* Adjust font size as needed */
+    text-align: center;
+    white-space: pre-wrap; /* Ensure text wraps */
+    word-wrap: break-word;
+    max-width: 150px; /* Prevent overflow */
+    line-height: 1.2; /* Adjust line height as needed */
+}
