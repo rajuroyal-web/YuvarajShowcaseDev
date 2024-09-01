@@ -137,13 +137,26 @@ body, html {
     text-align: center;
 }
 
-.front-header h1 {
+/* Typing Text Animation */
+.typing-text {
     font-size: 3.5em; /* Slightly larger for better visibility */
     margin: 0;
+    overflow: hidden; /* Ensures text does not overflow */
+    white-space: nowrap; /* Keeps text in a single line */
+    border-right: .15em solid orange; /* Creates cursor effect */
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
 }
 
-.front-header p {
-    font-size: 1.5em; /* Increased font size */
+/* Typing Animation */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Cursor Blinking Effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
 }
 
 /* Button Styles */
@@ -215,15 +228,23 @@ body, html {
     border: 2px solid white; /* Add a border to make it visible */
     border-radius: 50%; /* Optional: round the corners */
     opacity: 0.9; /* Make sure it's not too transparent */
+    animation: astronaut-animation 1s ease-in-out infinite; /* Smooth floating effect */
 }
 
-/* Astronaut Text */
+/* Astronaut Floating Animation */
+@keyframes astronaut-animation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Typing Text Animation */
 .astronaut-text {
-    color: white;
-    font-size: 16px; /* Adjust font size as needed */
+    margin-top: 10px;
+    font-size: 1.2em; /* Slightly larger text */
     text-align: center;
-    white-space: pre-wrap; /* Ensure text wraps */
-    word-wrap: break-word;
-    max-width: 150px; /* Prevent overflow */
-    line-height: 1.2; /* Adjust line height as needed */
+    color: white;
+    overflow: hidden; /* Ensure text does not overflow */
+    white-space: nowrap; /* Keeps text in a single line */
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
 }
