@@ -186,7 +186,7 @@ body, html {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    width: 100px; /* Reduced size */
+    width: 150px; /* Adjust as needed */
     height: auto; /* Adjust to fit content */
     display: flex;
     flex-direction: column;
@@ -206,8 +206,8 @@ body, html {
 
 /* Astronaut Image */
 .astronaut {
-    width: 100px; /* Reduced size */
-    height: 100px; /* Reduced size */
+    width: 120px; /* Adjust as needed */
+    height: 120px; /* Adjust as needed */
     background-image: url('../images/astronaut.png'); /* Ensure this path is correct */
     background-size: cover;
     background-position: center;
@@ -236,6 +236,6 @@ body, html {
     text-align: center;
     white-space: pre-wrap; /* Ensure text wraps */
     word-wrap: break-word;
-    max-width: 130px; /* Adjusted width to match astronaut size */
+    max-width: 150px; /* Prevent overflow */
     line-height: 1.2; /* Adjust line height as needed */
 }
