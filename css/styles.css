@@ -137,6 +137,23 @@ body, html {
     text-align: center;
 }
 
+/* Name Text */
+.name-text {
+    font-size: 5vw; /* Responsive font size */
+    text-align: center;
+    color: white;
+    overflow: hidden; /* Ensure text does not overflow */
+    white-space: nowrap; /* Keeps text in a single line */
+    margin: 0 auto; /* Center the text */
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 767px) {
+    .name-text {
+        font-size: 7vw; /* Adjust for smaller screens */
+    }
+}
+
 /* Typing Text Animation */
 .typing-text {
     font-size: 3.5em; /* Slightly larger for better visibility */
